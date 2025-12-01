@@ -6,7 +6,7 @@ import type {
   FHEPaymentPayload,
 } from './types'
 import type { FhevmInstance } from 'fhevm-sdk'
-import type { FhevmDecryptionSignature } from 'fhevm-sdk/dist/FhevmDecryptionSignature'
+import type { FhevmDecryptionSignature } from 'fhevm-sdk'
 
 /**
  * Parse payment requirements from 402 response

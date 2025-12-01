@@ -101,7 +101,7 @@ export const useX402Payment = (params: UseX402PaymentParams) => {
       }
 
       // Encrypt amount
-      const enc = await encryptWith((builder: Record<string, (n: number) => void>) => {
+      const enc = await encryptWith((builder: any) => {
         builder[method](amount)
       })
       if (!enc) {
