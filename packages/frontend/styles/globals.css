@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --shadow-center: 0 0 0 0 transparent;
+  --animate-pulse-fast: pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  /* Updated color palette */
+  --glass-yellow-primary: #FFD208;
+  --glass-yellow-secondary: #A38025;
+  --glass-yellow-dark: #A38025;
+  --glass-bg-light: #F4F4F4;
+  --glass-bg-medium: #E8E8E8;
+  --glass-bg-dark: #D9D9D9;
+  --glass-border: #2D2D2D;
+  --glass-shadow: 0 0 0 0 transparent;
+  --glass-shadow-lg: 0 0 0 0 transparent;
+}
+
+@plugin "daisyui" {
+  themes:
+    light,
+    dark --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+
+  --color-primary: #FFD208;
+  --color-primary-content: #2D2D2D;
+  --color-secondary: #A38025;
+  --color-secondary-content: #F4F4F4;
+  --color-accent: #FFD208;
+  --color-accent-content: #2D2D2D;
+  --color-neutral: #2D2D2D;
+  --color-neutral-content: #F4F4F4;
+  --color-base-100: #FFF7EC;
+  --color-base-200: #F4F4F4;
+  --color-base-300: #E8E8E8;
+  --color-base-content: #2D2D2D;
+  --color-info: #FFD208;
+  --color-success: #A38025;
+  --color-warning: #A38025;
+  --color-error: #2D2D2D;
+
+  --radius-field: 0;
+  --radius-box: 0;
+  --tt-tailw: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+
+  --color-primary: #FFD208;
+  --color-primary-content: #2D2D2D;
+  --color-secondary: #A38025;
+  --color-secondary-content: #F4F4F4;
+  --color-accent: #FFD208;
+  --color-accent-content: #2D2D2D;
+  --color-neutral: #F4F4F4;
+  --color-neutral-content: #2D2D2D;
+  --color-base-100: #2D2D2D;
+  --color-base-200: #2D2D2D;
+  --color-base-300: #2D2D2D;
+  --color-base-content: #F4F4F4;
+  --color-info: #FFD208;
+  --color-success: #A38025;
+  --color-warning: #A38025;
+  --color-error: #2D2D2D;
+
+  --radius-field: 0;
+  --radius-box: 0;
+
+  --tt-tailw: 0;
+  --tt-bg: var(--color-primary);
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #975a16;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}
+
+
+:root,
+[data-theme] {
+  background: transparent;
+}
+
+.btn {
+  box-shadow: none;
+}
+
+.btn.btn-ghost {
+  box-shadow: none;
+}
+
+.link {
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  opacity: 80%;
+}
+
+/* Updated card and button styles */
+.glass-card {
+  background: #F4F4F4;
+  border: 1px solid #2D2D2D;
+  box-shadow: none;
+}
+
+.glass-card-strong {
+  background: #E8E8E8;
+  border: 1px solid #2D2D2D;
+  box-shadow: none;
+}
+
+.glass-button {
+  background: #FFD208;
+  border: 1px solid #2D2D2D;
+  box-shadow: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-button:hover:not(:disabled) {
+  background: #A38025;
+  transform: none;
+  box-shadow: none;
+}
+
+.glass-button:active:not(:disabled) {
+  transform: none;
+}
+
+.glass-input {
+  background: #F4F4F4;
+  border: 1px solid #2D2D2D;
+  transition: all 0.2s ease;
+}
+
+.glass-input:focus {
+  background: #F4F4F4;
+  border-color: #FFD208;
+  outline: none;
+  box-shadow: none;
+}
